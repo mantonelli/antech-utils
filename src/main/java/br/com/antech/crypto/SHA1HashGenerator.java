@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author mantonelli
+ * @author Matheus Antonelli
  */
 class SHA1HashGenerator extends HashGenerator {
 

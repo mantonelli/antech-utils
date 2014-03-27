@@ -13,7 +13,7 @@ import javax.crypto.spec.PBEKeySpec;
 
 /**
  *
- * @author mantonelli
+ * @author Matheus Antonelli
  */
 public class PBKDF2HashGenerator extends HashGenerator {
 

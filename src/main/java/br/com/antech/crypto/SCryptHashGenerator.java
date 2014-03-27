@@ -6,7 +6,7 @@ package br.com.antech.crypto;
 
 /**
  *
- * @author mantonelli
+ * @author Matheus Antonelli
  */
 public class SCryptHashGenerator extends HashGenerator {
 

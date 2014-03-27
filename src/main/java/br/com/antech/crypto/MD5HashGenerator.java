@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author mantonelli
+ * @author Matheus Antonelli
  */
 class MD5HashGenerator extends HashGenerator {
 
