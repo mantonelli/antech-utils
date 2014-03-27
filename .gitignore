@@ -1,6 +1,15 @@
+# Maven #
+target/
+
+# Java Files #
 *.class
 
 # Package Files #
 *.jar
 *.war
 *.ear
+
+# Other Files #
+*~
+*.log
+*.tmp
