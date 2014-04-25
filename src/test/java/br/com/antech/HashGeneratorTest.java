@@ -26,13 +26,8 @@ public class HashGeneratorTest {
     
     @Before
     public void setup() {
-        try {
-            salt = Salt.generate(32);
-        } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(HashGeneratorTest.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (NoSuchProviderException ex) {
-            Logger.getLogger(HashGeneratorTest.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            salt = "D8539db3A749008C6EC0A02761579e00";
+            Logger.getLogger(HashGeneratorTest.class.getName()).log(Level.INFO, "Salt: " + salt);
     }
     
     @Test
@@ -40,6 +35,8 @@ public class HashGeneratorTest {
         try {
             HashGenerator hg = HashFactory.getInstance(HashFactory.CRYPTO_MD5);
             String passwd = hg.hash("password", salt);
+            
+            assertEquals(passwd, "2902d55ea95c929d95673dbd2c6fcf66");
             assertTrue(hg.check("password", salt, passwd));
             assertFalse(hg.check("fsdfsdfdsf", salt, passwd));
             Logger.getLogger(HashGeneratorTest.class.getName()).log(Level.INFO, passwd);
@@ -54,6 +51,8 @@ public class HashGeneratorTest {
         try {
             HashGenerator hg = HashFactory.getInstance(HashFactory.CRYPTO_SHA1);
             String passwd = hg.hash("password", salt);
+            
+            assertEquals(passwd, "c95f337cf9d09e1bec924c0ed5a7d635a55a6fe9");
             assertTrue(hg.check("password", salt, passwd));
             assertFalse(hg.check("fsdfsdfdsf", salt, passwd));
             Logger.getLogger(HashGeneratorTest.class.getName()).log(Level.INFO, passwd);
@@ -68,6 +67,8 @@ public class HashGeneratorTest {
         try {
             HashGenerator hg = HashFactory.getInstance(HashFactory.CRYPTO_SHA256);
             String passwd = hg.hash("password", salt);
+            
+            assertEquals(passwd, "a26a9165e80abb3e8783522c74333bdc583edc8189cef752615368e03470d9a2");
             assertTrue(hg.check("password", salt, passwd));
             assertFalse(hg.check("fsdfsdfdsf", salt, passwd));
             Logger.getLogger(HashGeneratorTest.class.getName()).log(Level.INFO, passwd);
@@ -85,6 +86,8 @@ public class HashGeneratorTest {
             hg.setKeyLength(256);
             
             String passwd = hg.hash("password", salt);
+            
+            assertEquals(passwd, "ebe617db7ae591a2dddf61cec1aeaeab114313ca4ac3d82ed446bf3f406cc70e");
             assertTrue(hg.check("password", salt, passwd));
             assertFalse(hg.check("fsdfsdfdsf", salt, passwd));
             Logger.getLogger(HashGeneratorTest.class.getName()).log(Level.INFO, passwd);
